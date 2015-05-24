@@ -1,14 +1,14 @@
-
 <h1> New Book </h1>
-<%= form_for @book do |f| %>
-  <%= f.label :title%>
-  <%= f.text_field :title%>
-  <%= f.label :description%>
-  <%= f.text_field :description%>
+<%= form_for @book, :html => { :multipart => true } do |b| %>
+  <%= b.label :title%>
+  <%= b.text_field :title%>
+  <%= b.label :description%>
+  <%= b.text_field :description%>
+  <%= b.file_field :book_cover%>
   Author:
-    <%= f.fields_for :author_attributes do |authors_form| %>
-        <%= authors_form.label :author_name %>
-        <%= authors_form.text_field :author_name %>
+    <%= b.fields_for :author_attributes do |authors_form| %>
+        <%= authors_form.label :name %>
+        <%= authors_form.text_field :name %>
     <% end %>
- <%= f.submit "Create Book"%>
+ <%= b.submit "Create Book"%>
 <% end %>

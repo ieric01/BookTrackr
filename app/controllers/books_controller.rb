@@ -5,34 +5,35 @@ class BooksController < ApplicationController
 
   def new
   	@book = Book.new
+    @book.build_author
   end
 
   def create
-  	@book = Book.new(:title => params[:book][:title], 
-  					:description => params[:book][:description])
-  	# binding.pry
+    #Here we can say if book already exits dont create it andnotify the user instead
+  	@book = Book.new(book_params)
 
-  	#TRY ONLY ASSOCIATING THE AUTHOR ID WITH BOOK AND REMOVE THE AUTHOR NAME COLUMN
-  	#IN BOOKS TABLE,
-
-  	# create author only if it doesnt exist, if it does exist just assign
-  	#the book to author
-
+    # Message not showing up on show page
   	if @book.save
-  		flash[:notice] = "You've successfully created a new book to track!"
-  		redirect_to @book
+  		redirect_to @book, notice: "Successfully created new book"
   	else
   		render "new"
   	end
 
-
-  	#create a new book with author here for tomorrow
   end
 
-  private 
-	#strong params created to prevent sql injection and mass assignment
-	#whitlisted desired attributes
+  def show
+    @book = Book.find(params[:id])
+  end
+
+  def destroy
+    @book = Book.find(params[:id])
+    @book.destroy
+    redirect_to @root
+  end
+
+  private
+
   def book_params
-		params.require(:book).permit(:title, :description, :author_attributes => [:author_name])
+		params.require(:book).permit(:title, :description, :book_cover, :author_attributes => [:name])
   end
 end

@@ -1,7 +1,9 @@
 source 'https://rubygems.org'
 
+gem "paperclip", "~> 4.2"
 gem 'pry'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+gem 'pry-nav'
 gem 'rails', '4.2.1'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
