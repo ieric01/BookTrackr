@@ -2,9 +2,11 @@
 
 <%= link_to "New Book", new_book_path %>
 
+<div class="container">
 <% Book.all.each do |book| %>
 	<%= book.title %>
 	<%= link_to(book) do %>
   		<%= image_tag(book.book_cover.url(:medium)) %>
 	<% end %>
 <% end %>
+</div>
