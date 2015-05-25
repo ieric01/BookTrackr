@@ -1,7 +1,3 @@
-<h1>Books#index</h1>
-
-<%= link_to "New Book", new_book_path %>
-
 <div class="container">
 <% Book.all.each do |book| %>
 	<%= book.title %>
