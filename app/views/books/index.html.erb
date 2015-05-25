@@ -1,8 +1,10 @@
 <h1>Books#index</h1>
-<p>Find me in app/views/books/index.html.erb</p>
 
 <%= link_to "New Book", new_book_path %>
 
 <% Book.all.each do |book| %>
 	<%= book.title %>
+	<%= link_to(book) do %>
+  		<%= image_tag(book.book_cover.url(:medium)) %>
+	<% end %>
 <% end %>
