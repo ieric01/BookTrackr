@@ -6,4 +6,6 @@ Rails.application.routes.draw do
   	resources :authors
   end
 
+ post 'books/:id', to: 'books#destroy'
+
 end

@@ -4,4 +4,4 @@
 <br>
 <%= link_to "Home Page", root_path %>
 <%= button_to "Delete Book", { action: :destroy, id: @book.id },
-                                method: :destroy, data: { confirm: "Are you sure?" } %>
+                                method: :post, data: { confirm: "Are you sure?" } %>
