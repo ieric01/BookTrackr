@@ -12,8 +12,8 @@
 
 	<nav class="navbar navbar-default">
 		<div class="container-fluid">
-					<ul class="nav navbar-nav navbar-left">
-			 			<li><%= link_to "BookTrackr", root_path %></li>
+					<ul class="navbar-brand">
+			 			<%= link_to "BookTrackr", root_path %>
 					</ul>
 			   <ul class="nav navbar-nav navbar-right">
 			   		<li><%= link_to "Sign In"%> </li>
@@ -28,7 +28,6 @@
     <% end %>
 		<%= yield %>
 	</div>
-
 
 </body>
 </html>

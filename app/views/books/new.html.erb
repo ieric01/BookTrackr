@@ -1,14 +1,21 @@
-<h1> New Book </h1>
-<%= form_for @book, :html => { :multipart => true } do |b| %>
-  <%= b.label :title%>
-  <%= b.text_field :title%>
-  <%= b.label :description%>
-  <%= b.text_field :description%>
-  <%= b.file_field :book_cover%>
-  Author:
-    <%= b.fields_for :author_attributes do |authors_form| %>
-        <%= authors_form.label :name %>
-        <%= authors_form.text_field :name %>
-    <% end %>
- <%= b.submit "Create Book"%>
+<h1> New Book </h1>	
+	<%= simple_form_for @book, :html => {:multipart => true} do |b| %>
+  <%= b.input :title %>
+  <%= b.input :description, as: :text %>
+  <%= b.file_field :book_cover %>
+  <br>
+  <%= b.fields_for :author_attributes do |authors_form| %>
+  	<h2>Author</h2>
+    <%= authors_form.input :name %>
+  <% end %>
+  <%= b.button :submit %>
 <% end %>
+
+
+
+
+
+
+
+
+
