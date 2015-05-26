@@ -1,2 +1,40 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+
+
+.books {
+  background: white;
+  border-radius: 10px;
+  margin-bottom: 25px;
+  // &:hover{transform: scale(1.075)}
+    .image_wrapper {
+      border-radius: 5px 5px 0 0;
+      border-color: black;
+      overflow: hidden;
+      width: 100%;
+      -webkit-transition: all .3s ease-out;
+      -moz-transition: all .3s ease-out;
+      -o-transition: all .3s ease-out;
+      transition: all .3s ease-out;
+      // &:hover {
+      //   transform: scale(1.075);
+      // }
+    }
+}
+
+.pop_up {
+    border: solid red 1px;
+    width: 100px;
+    background: yellow;
+    position: absolute;
+    top: 50%;
+    margin-top: -50px;
+    left: 50%;
+    margin-left: -50px;
+    display: none;
+}
+
+
+
+
