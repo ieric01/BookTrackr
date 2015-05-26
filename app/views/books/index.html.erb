@@ -1,8 +1,12 @@
-<div class="container">
-<% Book.all.each do |book| %>
-	<%= book.title %>
-	<%= link_to(book) do %>
-  		<%= image_tag(book.book_cover.url(:medium)) %>
-	<% end %>
+<% @books.each_slice(3) do |books| %>
+	<div class="row">
+		<% books.each do |book| %>
+				<div class="col-md-4">
+					<%= book.title %>
+					<%= link_to(book) do %>
+				  		<%= image_tag(book.book_cover.url(:medium)) %>
+					<% end %>
+				</div>
+		<% end %>
+	</div>
 <% end %>
-</div>
