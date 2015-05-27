@@ -1,34 +1,44 @@
 <!DOCTYPE html>
-
-<script type="text/javascript" src="jQuery-1.4.1-min.js"></script>
-
-
-<% @books.each_slice(3) do |books| %>
-	<div class="row">
-		<% books.each do |book| %>
-				<div class="col-md-4">
-					<div class="books">
-						<div class="image_wrapper">
-							<div class="pop_up"></div>
-							 <%= link_to(book) do %>
-						  		<%= image_tag(book.book_cover.url(:medium)) %>
-							<% end %>
-						<%= book.title %>
-						<%= book.description %>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+		<script type="text/javascript" src="jQuery-1.4.1-min.js"></script>
+  </head>
+  <body>
+		<% @books.each_slice(3) do |books| %>
+			<div class="row">
+				<% books.each do |book| %>
+						<div class="col-md-4">
+							<div class="books">
+								<div class="image_wrapper">
+									<div class="pop_up">
+										<p>Rating:</p>
+										<p>Description:</p>
+										<%= book.description %>
+									</div>
+									 <%= link_to(book) do %>
+								  		<%= image_tag(book.book_cover.url(:medium)) %>
+									<% end %>
+								<%= book.title %>
+								</div>
+							</div>
 						</div>
-					</div>
-				</div>
+				<% end %>
+			</div>
 		<% end %>
-	</div>
-<% end %>
 
-<script type="text/javascript">
-	$(document).ready(function(){
-	  $('.image_wrapper').on("mouseover", function(){
-	  	$('.pop_up').show();
-	  }).on("mouseleave", function(){
-	  	$('.pop_up').hide();
-	  })
+			<script type="text/javascript">
+				$( document ).ready(function(){
+				  $(".image_wrapper").hover(function(){
+				  	var pop_up = $(this).find('.pop_up')
+				  	pop_up.css({left:300, top:50})
+				  	pop_up.show();
+				 },function(){
+				 		var pop_up = $(this).find('.pop_up')
+				 		pop_up.hide();
+				 	})
+				});
+			</script>
 
-	});
-</script>
+  </body>
+</html>
