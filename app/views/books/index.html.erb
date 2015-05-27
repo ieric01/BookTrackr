@@ -2,43 +2,75 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-		<script type="text/javascript" src="jQuery-1.4.1-min.js"></script>
+		<!-- Important Owl stylesheet -->
+<link rel="stylesheet" href="owl-carousel/owl.carousel.css">
+ 
+<!-- Default Theme -->
+<link rel="stylesheet" href="owl-carousel/owl.theme.css">
+ 
+<!--  jQuery 1.7+  -->
+<script src="jquery-1.9.1.min.js"></script>
+ 
+<!-- Include js plugin -->
+<script src="owl-carousel/owl.carousel.js"></script>
+
   </head>
   <body>
 		<% @books.each_slice(3) do |books| %>
-			<div class="row">
-				<% books.each do |book| %>
-						<div class="col-md-4">
-							<div class="books">
-								<div class="image_wrapper">
-									<div class="pop_up">
-										<p>Rating:</p>
-										<p>Description:</p>
-										<%= book.description %>
+			<div class="owl-carousel">
+				<div class="row">
+					<% books.each do |book| %>
+							<div class="col-md-4">
+								<div class="books">
+									<div class="image_wrapper">
+										<div class="pop_up">
+											<p>Rating:</p>
+											<p>Description:</p>
+											<%= book.description %>
+										</div>
+										 <%= link_to(book) do %>
+									  		<%= image_tag(book.book_cover.url(:medium)) %>
+										<% end %>
+									<%= book.title %>
 									</div>
-									 <%= link_to(book) do %>
-								  		<%= image_tag(book.book_cover.url(:medium)) %>
-									<% end %>
-								<%= book.title %>
 								</div>
 							</div>
-						</div>
-				<% end %>
+					<% end %>
+				</div>
 			</div>
 		<% end %>
 
+	<!-- PopUp Box appears when user hovers over book_image -->
+			<script src="assets/owl-carousel/owl.carousel.js"></script>
 			<script type="text/javascript">
 				$( document ).ready(function(){
+					$(".owl-carousel").owlCarousel({
+
+
+				navigation : true, // Show next and prev buttons
+        slideSpeed : 300,
+        paginationSpeed : 400,
+        singleItem:true
+
+        // "singleItem:true" is a shortcut for:
+        // items : 1, 
+        // itemsDesktop : false,
+        // itemsDesktopSmall : false,
+        // itemsTablet: false,
+        // itemsMobile : false
+    });
+
 				  $(".image_wrapper").hover(function(){
 				  	var pop_up = $(this).find('.pop_up')
 				  	pop_up.css({left:300, top:50})
-				  	pop_up.show();
+				  	pop_up.fadeIn(400);
 				 },function(){
 				 		var pop_up = $(this).find('.pop_up')
 				 		pop_up.hide();
 				 	})
 				});
 			</script>
+		<!-- END OF POPUP BOX -->
 
   </body>
 </html>

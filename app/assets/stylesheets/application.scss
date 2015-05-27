@@ -36,6 +36,8 @@
   // border: 1px solid #1a1a1a;
   border-style: 2px dotted-solid;
   font-size: 90%;
+  // z-index allows popupbox to not hide behind book image
+  z-index:100
 }
 
 
