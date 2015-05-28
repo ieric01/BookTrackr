@@ -1,47 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-		<!-- Important Owl stylesheet -->
-<link rel="stylesheet" href="owl-carousel/owl.carousel.css">
- 
-<!-- Default Theme -->
-<link rel="stylesheet" href="owl-carousel/owl.theme.css">
- 
-<!--  jQuery 1.7+  -->
-<script src="jquery-1.9.1.min.js"></script>
- 
-<!-- Include js plugin -->
-<script src="owl-carousel/owl.carousel.js"></script>
-
+    <meta charset="utf-8"/>
   </head>
   <body>
-		<% @books.each_slice(3) do |books| %>
-			<div class="owl-carousel">
-				<div class="row">
-					<% books.each do |book| %>
-							<div class="col-md-4">
-								<div class="books">
-									<div class="image_wrapper">
-										<div class="pop_up">
-											<p>Rating:</p>
-											<p>Description:</p>
-											<%= book.description %>
-										</div>
-										 <%= link_to(book) do %>
-									  		<%= image_tag(book.book_cover.url(:medium)) %>
-										<% end %>
-									<%= book.title %>
-									</div>
-								</div>
-							</div>
-					<% end %>
-				</div>
-			</div>
+
+
+
+	<div class="owl-demo owl-carousel">
+		<% @books.each do |book| %>
+			<div class ="items">
+			 <%= link_to(book) do %>
+		  		<%= image_tag(book.book_cover.url(:medium)) %>
+			<% end %>
+			</div>	
 		<% end %>
+	</div>
 
 	<!-- PopUp Box appears when user hovers over book_image -->
-			<script src="assets/owl-carousel/owl.carousel.js"></script>
 			<script type="text/javascript">
 				$( document ).ready(function(){
 					$(".owl-carousel").owlCarousel({
@@ -50,14 +26,7 @@
 				navigation : true, // Show next and prev buttons
         slideSpeed : 300,
         paginationSpeed : 400,
-        singleItem:true
-
-        // "singleItem:true" is a shortcut for:
-        // items : 1, 
-        // itemsDesktop : false,
-        // itemsDesktopSmall : false,
-        // itemsTablet: false,
-        // itemsMobile : false
+        items : 3
     });
 
 				  $(".image_wrapper").hover(function(){

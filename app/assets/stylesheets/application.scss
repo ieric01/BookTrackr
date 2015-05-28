@@ -1,45 +1,20 @@
-@import "bootstrap-sprockets";
-@import "bootstrap";
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ */
 
 
-
-.books {
-  background: white;
-  border-radius: 10px;
-  margin-bottom: 25px;
-  // &:hover{transform: scale(1.075)}
-  .image_wrapper {
-    border-radius: 5px 5px 0 0;
-    border-color: black;
-    overflow: hidden;
-    width: 100%;
-    -webkit-transition: all .3s ease-out;
-    -moz-transition: all .3s ease-out;
-    -o-transition: all .3s ease-out;
-    transition: all .3s ease-out;
-    // &:hover {
-    //   transform: scale(1.075);
-    // }
-  }
-}
-
-.pop_up {
-  display: none;
-  position: absolute;
-  width: 200px;
-  height: 100px;
-  padding: 10px;
-  // cream color // background: #FFFDD0;
-  background: #ededed;
-  // color for text in popup
-  color: black;
-  // border: 1px solid #1a1a1a;
-  border-style: 2px dotted-solid;
-  font-size: 90%;
-  // z-index allows popupbox to not hide behind book image
-  z-index:100
-}
-
-
+ @import "./*";
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
 
 
