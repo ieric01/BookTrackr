@@ -3,41 +3,94 @@
   <head>
     <meta charset="utf-8"/>
   </head>
+  	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<script>window.jQuery || document.write('<script src="js/jquery-1.7.2.min.js"><\/script>')</script>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+		<!-- Optional theme -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+
+		<!-- Latest compiled and minified JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
   <body>
+<!-- have a carousel of books, when you click on it, in the show page, you'll have 
+the book with a dark background, when you click on the book, a spotlight is shone on the book, then you can flip the page of the book, and on each page you can have your ratings description, etc. -->
+<!--  Carousel - consult the Twitter Bootstrap docs at 
+      http://twitter.github.com/bootstrap/javascript.html#carousel -->
+<div id="this-carousel-id" class="carousel slide"><!-- class of slide for animation -->
+  <div class="carousel-inner">
+    <div class="item active"><!-- class of active since it's the first item -->
+      <img src="http://placehold.it/1200x480" alt="" />
+      <div class="carousel-caption">
+        <p>We can do it</p>
+      </div>
+    </div>
+    <div class="item">
+      <img src="http://placehold.it/1200x480" alt="" />
+      <div class="carousel-caption">
+        <p>hello there 2</p>
+      </div>
+    </div>
+    <div class="item">
+      <img src="http://placehold.it/1200x480" alt="" />
+      <div class="carousel-caption">
+        <p>Caption text here</p>
+      </div>
+    </div>
+    <div class="item">
+      <img src="http://placehold.it/1200x480" alt="" />
+      <div class="carousel-caption">
+        <p>Caption text here</p>
+      </div>
+    </div>
+  </div><!-- /.carousel-inner -->
+  <!--  Next and Previous controls below
+        href values must reference the id for this carousel -->
+    <a class="carousel-control left" href="#this-carousel-id" data-slide="prev">&lsaquo;</a>
+    <a class="carousel-control right" href="#this-carousel-id" data-slide="next">&rsaquo;</a>
+</div><!-- /.carousel -->
 
 
 
-	<div class="owl-demo owl-carousel">
-		<% @books.each do |book| %>
-			<div class ="items">
-			 <%= link_to(book) do %>
-		  		<%= image_tag(book.book_cover.url(:medium)) %>
-			<% end %>
-			</div>	
-		<% end %>
-	</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 	<!-- PopUp Box appears when user hovers over book_image -->
-			<script type="text/javascript">
-				$( document ).ready(function(){
-					$(".owl-carousel").owlCarousel({
 
+	
+			<script>
+		  $(document).ready(function(){
+		    $('.carousel').carousel();
+		  });
+</script>
 
-				navigation : true, // Show next and prev buttons
-        slideSpeed : 300,
-        paginationSpeed : 400,
-        items : 3
-    });
+<script>
 
-				  $(".image_wrapper").hover(function(){
-				  	var pop_up = $(this).find('.pop_up')
+				  $(".items").hover(function(){
+				  	var pop_up = $(this).find('.pop')
 				  	pop_up.css({left:300, top:50})
 				  	pop_up.fadeIn(400);
 				 },function(){
-				 		var pop_up = $(this).find('.pop_up')
+				 		var pop_up = $(this).find('.pop')
 				 		pop_up.hide();
 				 	})
-				});
+				
 			</script>
 		<!-- END OF POPUP BOX -->
 

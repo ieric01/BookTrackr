@@ -1,13 +1,13 @@
 <h1> New Book </h1>	
 	<%= simple_form_for @book, :html => {:multipart => true} do |b| %>
-  <%= b.input :title %>
-  <%= b.input :description, as: :text %>
-  <%= b.file_field :book_cover %>
-  <br>
-  <%= b.fields_for :author_attributes do |authors_form| %>
-  	<h2>Author</h2>
-    <%= authors_form.input :name %>
-  <% end %>
+	  <%= b.input :title %>
+	  <%= b.input :description, as: :text %>
+	  <%= b.file_field :book_cover %>
+	  <br>
+		  <%= b.fields_for :author_attributes do |authors_form| %>
+		  	<h2>Author</h2>
+		    <%= authors_form.input :name %>
+		  <% end %>
   <%= b.button :submit %>
 <% end %>
 
