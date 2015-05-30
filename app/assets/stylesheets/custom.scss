@@ -1,39 +1,39 @@
-.books {
-  background: white;
-  border-radius: 10px;
-  margin-bottom: 25px;
-  // &:hover{transform: scale(1.075)}
-  .image_wrapper {
-    border-radius: 5px 5px 0 0;
-    border-color: black;
-    overflow: hidden;
-    width: 100%;
-    -webkit-transition: all .3s ease-out;
-    -moz-transition: all .3s ease-out;
-    -o-transition: all .3s ease-out;
-    transition: all .3s ease-out;
-    // &:hover {
-    //   transform: scale(1.075);
-    // }
-  }
-}
+// .books {
+//   background: white;
+//   border-radius: 10px;
+//   margin-bottom: 25px;
+//   // &:hover{transform: scale(1.075)}
+//   .image_wrapper {
+//     border-radius: 5px 5px 0 0;
+//     border-color: black;
+//     overflow: hidden;
+//     width: 100%;
+//     -webkit-transition: all .3s ease-out;
+//     -moz-transition: all .3s ease-out;
+//     -o-transition: all .3s ease-out;
+//     transition: all .3s ease-out;
+//     // &:hover {
+//     //   transform: scale(1.075);
+//     // }
+//   }
+// }
 
-.pop_up {
-  display: none;
-  position: absolute;
-  width: 200px;
-  height: 100px;
-  padding: 10px;
-  // cream color // background: #FFFDD0;
-  background: #ededed;
-  // color for text in popup
-  color: black;
-  // border: 1px solid #1a1a1a;
-  border-style: 2px dotted-solid;
-  font-size: 90%;
-  // z-index allows popupbox to not hide behind book image
-  z-index:100
-}
+// .pop_up {
+//   display: none;
+//   position: absolute;
+//   width: 200px;
+//   height: 100px;
+//   padding: 10px;
+//   // cream color // background: #FFFDD0;
+//   background: #ededed;
+//   // color for text in popup
+//   color: black;
+//   // border: 1px solid #1a1a1a;
+//   border-style: 2px dotted-solid;
+//   font-size: 90%;
+//   // z-index allows popupbox to not hide behind book image
+//   z-index:100
+// }
 
 
 
@@ -45,15 +45,15 @@
 
 // }
 
-// .thumbnail {
-//     width: 260px;
-//     height: 180px;
-//     overflow: hidden; /* contain images within thumbnail boundaries */
-//     border: 0; removes Bootstrap's default border
-//     box-shadow: 0 12px 12px -10px #c4c4c4;
-//     -webkit-box-shadow: 0 17px 22px -20px #c4c4c4;
-//     -moz-box-shadow: 0 12px 12px -10px #c4c4c4;
-// }
+.thumbnail {
+    width: 260px;
+    height: 180px;
+    overflow: hidden; /* contain images within thumbnail boundaries */
+    border: 0;
+    box-shadow: 0 12px 12px -10px #c4c4c4;
+    -webkit-box-shadow: 0 17px 22px -20px #c4c4c4;
+    -moz-box-shadow: 0 12px 12px -10px #c4c4c4;
+}
 
 
 
