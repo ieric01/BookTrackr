@@ -55,6 +55,12 @@
     -moz-box-shadow: 0 12px 12px -10px #c4c4c4;
 }
 
+.thumbnail img { width:100%; height:auto; } /* to keep proportions */
+.thumbnails p { text-align: center; padding: 10px; } /* captions can be styled with an inline element */
+
+.header {
+  text-align: center;
+}
 
 
 

@@ -1,7 +1,8 @@
 class BooksController < ApplicationController
 
   def index
-    @books = Book.all
+    all_books = Book.all
+    @books = all_books[0..3]
   end
 
   def new

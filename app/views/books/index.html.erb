@@ -12,60 +12,65 @@
 
 		<!-- Latest compiled and minified JavaScript -->
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-  <body>
+
+  <body style="background-image:url('https://images.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.ianmccracken.co.uk%2Fweb%2520page%2520background.jpg&f=1'); background-attachment:fixed; background-position:POSITION; background-size: 100% auto;">
+
 		<!-- have a carousel of books, when you click on it, in the show page, you'll have 
 		the book with a dark background, when you click on the book, a spotlight is shone on the book, then you can flip the page of the book, and on each page you can have your ratings description, etc. -->
-		<div class="row-fluid">
-			<div id="myCarousel" class="carousel slide">
-			    <!-- Carousel items -->
-		    <div class="carousel-inner">
-		      <div class="item active"></div>
-		      	<ul class="thumbnails">
-		      		<% @books.each do |book| %>
-		      			<li class="span3">
+		<div class = "container well well-large">
+			<div class="row-fluid">
+				<h2 class="header"> Book Carousel </h2>
+				<div id="myCarousel" class="carousel slide">
+				    <!-- Carousel items -->
+			    <div class="carousel-inner">
+			      <div class="item active">
+			      	<ul class="list-inline">
+			      		<% @books.each do |book| %>
+			      			<li>
+			      				<div class="thumbnail">
+			      					<%= book.title %>
+			      					 <%= link_to(book) do %>
+				  							<%= image_tag(book.book_cover.url(:medium)) %>
+											<% end %>	
+			      				</div> <!-- end of thumbnail div  -->
+			      			</li>
+			      		<% end %>
+			      	</ul> <!-- end of ul tag -->
+			       </div><!-- end of item active div tag  -->
+			     <div class="item">
+			     	<ul class="list-inline">
+				     	<% @books.each do |book| %>
+		      			<li>
 		      				<div class="thumbnail">
+		      					 <%= book.title %>
 		      					 <%= link_to(book) do %>
 			  							<%= image_tag(book.book_cover.url(:medium)) %>
 										<% end %>
 		      				</div> <!-- end of thumbnail div  -->
-		      				<%= book.title %>
 		      			</li>
-		      		<% end %>
-		      	</ul> <!-- end of ul tag -->
-		       </div><!-- end of item active div tag  -->
-		     <div class="item">
-		     	<ul class="thumbnails">
-			     	<% @books.each do |book| %>
-	      			<li class="span3">
-	      				<div class="thumbnail">
-	      					 <%= link_to(book) do %>
-		  							<%= image_tag(book.book_cover.url(:medium)) %>
-									<% end %>
-	      				</div> <!-- end of thumbnail div  -->
-	      				<%= book.title %>
-	      			</li>
-			      <% end %>
-		      </ul> <!-- end of ul tag -->
-		    </div> <!-- end of item div tag -->
-			</div> <!--end of carousel-inner tag -->
-		    <!-- Carousel nav -->
-			    <a class="left carousel-control" href="#myCarousel" data-slide="prev">&lsaquo;</a>
-			    <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
-		</div><!--end of myCarousel tag -->
-	</div><!--end of row-fluid tag -->
-
-		  
+				      <% end %>
+			      </ul> <!-- end of ul tag -->
+			    </div> <!-- end of item div tag -->
+				</div> <!--end of carousel-inner tag -->
+			    <!-- Carousel nav -->
+				  <a data-slide="prev" href="#myCarousel" class="left carousel-control">‹</a>
+	        <a data-slide="next" href="#myCarousel" class="right carousel-control">›</a>
+			</div> <!--end of myCarousel tag -->
+		</div> <!--end of row-fluid tag -->
+	</div> <!--end of container well-large div tag -->
+ </body>
+</html>
 		   
 
 
 			<!-- PopUp Box appears when user hovers over book_image -->
 
 			
-					<script>
-				  $(document).ready(function(){
-				    $('.carousel').carousel();
-				  });
-		</script>
+					<script type="text/javascript">
+  $(document).ready(function() {
+    $('.carousel').carousel();
+  });
+</script>
 
 		<script>
 
@@ -81,5 +86,3 @@
 					</script>
 				<!-- END OF POPUP BOX -->
 
-  </body>
-</html>
